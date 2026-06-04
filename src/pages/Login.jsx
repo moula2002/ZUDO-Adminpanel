@@ -63,16 +63,16 @@ const Login = () => {
 
   return (
     <div style={{
-      height: '100vh',
+      minHeight: '100vh',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '20px'
+      padding: '40px 20px'
     }}>
       <div className="glass" style={{
         width: '100%',
         maxWidth: '550px',
-        padding: '64px',
+        padding: '40px 32px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'visible'
@@ -90,14 +90,14 @@ const Login = () => {
         }} />
 
         <h1 style={{
-          fontSize: '42px',
+          fontSize: '32px',
           fontWeight: 800,
           marginBottom: '12px',
           background: 'linear-gradient(135deg, #fff, #94a3b8)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent'
         }}>Welcome Back</h1>
-        <p style={{ color: 'var(--text-dim)', marginBottom: '48px', fontSize: '15px' }}>Sign in to ZUDO Admin Panel</p>
+        <p style={{ color: 'var(--text-dim)', marginBottom: '24px', fontSize: '15px' }}>Sign in to ZUDO Admin Panel</p>
 
         {error && (
           <div style={{
@@ -113,7 +113,7 @@ const Login = () => {
           </div>
         )}
 
-        <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div style={{ position: 'relative' }}>
             <Mail size={18} style={{ position: 'absolute', left: '16px', top: '14px', color: 'var(--text-dim)' }} />
             <input
@@ -141,11 +141,11 @@ const Login = () => {
           </div>
 
           {/* Location Selection */}
-          <div style={{ textAlign: 'left', marginTop: '8px' }}>
-            <label style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-dim)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <div style={{ textAlign: 'left', marginTop: '4px' }}>
+            <label style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-dim)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
               <Shield size={14} /> SELECT PORTAL / SEGMENT
             </label>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginBottom: '20px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginBottom: '16px' }}>
               {[
                 { id: 'B2C', icon: Users, label: 'B2C' },
                 { id: 'B2B', icon: Building2, label: 'B2B' },
@@ -156,7 +156,7 @@ const Login = () => {
                   type="button"
                   onClick={() => setSegment(item.id)}
                   style={{
-                    padding: '12px 8px',
+                    padding: '10px 8px',
                     borderRadius: '16px',
                     border: `1px solid ${segment === item.id ? 'var(--primary)' : 'rgba(255, 255, 255, 0.05)'}`,
                     background: segment === item.id ? 'rgba(99, 102, 241, 0.1)' : 'rgba(255, 255, 255, 0.02)',
@@ -175,7 +175,7 @@ const Login = () => {
               ))}
             </div>
 
-            <label style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-dim)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <label style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-dim)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
               <MapPin size={14} /> SELECT BRANCH / LOCATION
             </label>
 
@@ -186,7 +186,7 @@ const Login = () => {
                 style={{
                   width: '100%',
                   textAlign: 'left',
-                  padding: '16px 20px',
+                  padding: '12px 16px',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
@@ -349,14 +349,14 @@ const Login = () => {
           <button
             type="submit"
             className="btn-primary"
-            style={{ marginTop: '12px', height: '48px' }}
+            style={{ marginTop: '8px', height: '48px' }}
             disabled={loading}
           >
             {loading ? <Loader2 className="animate-spin" style={{ margin: '0 auto' }} /> : 'Sign In'}
           </button>
         </form>
 
-        <p style={{ marginTop: '32px', fontSize: '13px', color: 'var(--text-dim)' }}>
+        <p style={{ marginTop: '20px', fontSize: '13px', color: 'var(--text-dim)' }}>
           By signing in, you agree to Zudo's Security Policies
         </p>
       </div>
