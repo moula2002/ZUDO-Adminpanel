@@ -67,12 +67,12 @@ const Login = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '40px 20px'
+      padding: '24px 16px'
     }}>
       <div className="glass" style={{
         width: '100%',
-        maxWidth: '550px',
-        padding: '40px 32px',
+        maxWidth: '440px',
+        padding: '28px 24px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'visible'
@@ -82,22 +82,22 @@ const Login = () => {
           position: 'absolute',
           top: '-20px',
           right: '-20px',
-          width: '100px',
-          height: '100px',
+          width: '80px',
+          height: '80px',
           background: 'var(--primary)',
-          filter: 'blur(60px)',
+          filter: 'blur(50px)',
           opacity: 0.3
         }} />
 
         <h1 style={{
-          fontSize: '32px',
+          fontSize: '26px',
           fontWeight: 800,
-          marginBottom: '12px',
+          marginBottom: '6px',
           background: 'linear-gradient(135deg, #fff, #94a3b8)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent'
         }}>Welcome Back</h1>
-        <p style={{ color: 'var(--text-dim)', marginBottom: '24px', fontSize: '15px' }}>Sign in to ZUDO Admin Panel</p>
+        <p style={{ color: 'var(--text-dim)', marginBottom: '18px', fontSize: '13px' }}>Sign in to ZUDO Admin Panel</p>
 
         {error && (
           <div style={{
@@ -113,14 +113,14 @@ const Login = () => {
           </div>
         )}
 
-        <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           <div style={{ position: 'relative' }}>
-            <Mail size={18} style={{ position: 'absolute', left: '16px', top: '14px', color: 'var(--text-dim)' }} />
+            <Mail size={16} style={{ position: 'absolute', left: '14px', top: '12px', color: 'var(--text-dim)' }} />
             <input
               type="email"
               placeholder="Email Address"
               className="input-field"
-              style={{ paddingLeft: '48px' }}
+              style={{ padding: '10px 12px 10px 40px', fontSize: '13px', borderRadius: '8px' }}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -128,12 +128,12 @@ const Login = () => {
           </div>
 
           <div style={{ position: 'relative' }}>
-            <Lock size={18} style={{ position: 'absolute', left: '16px', top: '14px', color: 'var(--text-dim)' }} />
+            <Lock size={16} style={{ position: 'absolute', left: '14px', top: '12px', color: 'var(--text-dim)' }} />
             <input
               type="password"
               placeholder="Password"
               className="input-field"
-              style={{ paddingLeft: '48px' }}
+              style={{ padding: '10px 12px 10px 40px', fontSize: '13px', borderRadius: '8px' }}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -141,11 +141,11 @@ const Login = () => {
           </div>
 
           {/* Location Selection */}
-          <div style={{ textAlign: 'left', marginTop: '4px' }}>
-            <label style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-dim)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Shield size={14} /> SELECT PORTAL / SEGMENT
+          <div style={{ textAlign: 'left', marginTop: '2px' }}>
+            <label style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-dim)', marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <Shield size={12} /> SELECT PORTAL / SEGMENT
             </label>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginBottom: '16px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', marginBottom: '12px' }}>
               {[
                 { id: 'B2C', icon: Users, label: 'B2C' },
                 { id: 'B2B', icon: Building2, label: 'B2B' },
@@ -156,8 +156,8 @@ const Login = () => {
                   type="button"
                   onClick={() => setSegment(item.id)}
                   style={{
-                    padding: '10px 8px',
-                    borderRadius: '16px',
+                    padding: '8px 6px',
+                    borderRadius: '10px',
                     border: `1px solid ${segment === item.id ? 'var(--primary)' : 'rgba(255, 255, 255, 0.05)'}`,
                     background: segment === item.id ? 'rgba(99, 102, 241, 0.1)' : 'rgba(255, 255, 255, 0.02)',
                     color: segment === item.id ? 'var(--primary)' : '#64748b',
@@ -166,17 +166,17 @@ const Login = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    gap: '6px'
+                    gap: '4px'
                   }}
                 >
-                  <item.icon size={18} />
-                  <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' }}>{item.label}</span>
+                  <item.icon size={16} />
+                  <span style={{ fontSize: '9px', fontWeight: 700, textTransform: 'uppercase' }}>{item.label}</span>
                 </button>
               ))}
             </div>
 
-            <label style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-dim)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <MapPin size={14} /> SELECT BRANCH / LOCATION
+            <label style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-dim)', marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <MapPin size={12} /> SELECT BRANCH / LOCATION
             </label>
 
             <div style={{ position: 'relative' }}>
@@ -186,36 +186,36 @@ const Login = () => {
                 style={{
                   width: '100%',
                   textAlign: 'left',
-                  padding: '12px 16px',
+                  padding: '8px 12px',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   background: 'rgba(255, 255, 255, 0.03)',
                   backdropFilter: 'blur(10px)',
                   border: `1px solid ${dropdownOpen ? 'var(--primary)' : 'rgba(255, 255, 255, 0.1)'}`,
-                  borderRadius: '16px',
+                  borderRadius: '10px',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
                   boxShadow: dropdownOpen ? '0 0 20px rgba(99, 102, 241, 0.15)' : 'none'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <div style={{
-                    width: '32px', height: '32px', borderRadius: '8px', 
+                    width: '28px', height: '28px', borderRadius: '6px', 
                     background: selectedLocation ? 'var(--primary)' : 'rgba(255, 255, 255, 0.05)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     transition: '0.3s'
                   }}>
-                    <Map size={16} style={{ color: selectedLocation ? '#fff' : '#64748b' }} />
+                    <Map size={14} style={{ color: selectedLocation ? '#fff' : '#64748b' }} />
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                    <span style={{ fontSize: '11px', color: 'var(--text-dim)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Branch</span>
-                    <span style={{ color: selectedLocation ? '#fff' : '#94a3b8', fontWeight: 600, fontSize: '14px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
+                    <span style={{ fontSize: '10px', color: 'var(--text-dim)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Branch</span>
+                    <span style={{ color: selectedLocation ? '#fff' : '#94a3b8', fontWeight: 600, fontSize: '13px' }}>
                       {selectedLocation ? `${selectedLocation.city}` : 'Select Operational Zone'}
                     </span>
                   </div>
                 </div>
-                <ChevronDown size={18} style={{ color: 'var(--text-dim)', transition: '0.4s cubic-bezier(0.4, 0, 0.2, 1)', transform: dropdownOpen ? 'rotate(180deg)' : 'none' }} />
+                <ChevronDown size={16} style={{ color: 'var(--text-dim)', transition: '0.4s cubic-bezier(0.4, 0, 0.2, 1)', transform: dropdownOpen ? 'rotate(180deg)' : 'none' }} />
               </button>
 
               {dropdownOpen && (
@@ -349,14 +349,14 @@ const Login = () => {
           <button
             type="submit"
             className="btn-primary"
-            style={{ marginTop: '8px', height: '48px' }}
+            style={{ marginTop: '6px', height: '40px', borderRadius: '8px', fontSize: '14px' }}
             disabled={loading}
           >
-            {loading ? <Loader2 className="animate-spin" style={{ margin: '0 auto' }} /> : 'Sign In'}
+            {loading ? <Loader2 className="animate-spin" size={16} style={{ margin: '0 auto' }} /> : 'Sign In'}
           </button>
         </form>
 
-        <p style={{ marginTop: '20px', fontSize: '13px', color: 'var(--text-dim)' }}>
+        <p style={{ marginTop: '16px', fontSize: '12px', color: 'var(--text-dim)' }}>
           By signing in, you agree to Zudo's Security Policies
         </p>
       </div>
